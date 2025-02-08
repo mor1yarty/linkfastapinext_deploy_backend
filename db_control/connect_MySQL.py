@@ -4,7 +4,8 @@ import os
 from dotenv import load_dotenv
 
 # 環境変数の読み込み
-load_dotenv()
+if os.environ.get("APP_ENV", "development") == "development":
+    load_dotenv()
 
 # データベース接続情報
 DB_USER = os.getenv('DB_USER')
